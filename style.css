@@ -1,0 +1,377 @@
+/*
+Theme Name: Jumping
+Description: A  theme built by <a href="http://www.gzpblog.com">锅子</a>.
+Author: 锅子
+Author URI: http://www.gzpblog.com
+Version: 1.0
+Tags: bootstrap
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+
+This simple theme was built using Bootstrap
+*/
+@import url('public/bootstrap/css/bootstrap.min.css');
+@import url('public/font-awesome/css/font-awesome.min.css');
+@import url('public/css/jumping.css');
+
+/*
+ * 基本样式
+ * --------------------------------------------------
+ */
+html,
+body {
+    overflow-x:hidden; /* 对内容的左/右边缘进行裁剪 */
+
+}
+body {
+    font-family:  Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+    background-color:#F8F8F8;
+    padding-top: 70px;
+}
+a{
+    color: #3879D9;
+}
+
+
+/*
+ * 导航栏样式 bootstrap
+ */
+.navbar{
+    background-color: #373F47;
+    border-bottom: 1px solid #C8C8C8;
+    -moz-box-shadow:3px 3px 4px #C8C8C8;
+    -webkit-box-shadow:3px 3px 4px #C8C8C8;
+    box-shadow:1px 1px 2px #C8C8C8;
+    filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
+}
+
+.navbar .container a{
+
+}
+
+/* logo */
+.navbar-brand{
+    font-family: "Microsoft YaHei UI";
+    font-size: 26px;
+    margin-right: 20px;
+    color: #EAEAEA;
+}
+.navbar-brand:hover{
+    color: #1378F0;
+}
+
+#navbar-search{
+
+}
+
+/*导航菜单*/
+.jp_nav{
+    float: left;
+    height: 50px;
+    width: 720px;
+}
+
+.jp_nav a{
+    color: #AAAAAA;
+}
+
+.jp_menu li{
+    display: block;
+    list-style-type: none;
+    width: 90px;
+    height: 50px;
+    float: left;
+    position:relative;
+}
+
+.jp_menu li a{
+    display: block;
+    width: 90px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.jp_menu li a:hover{
+    text-decoration: none;
+    background-color: #3879D9;
+    color: #FFFFFF;
+}
+
+.sub-menu{
+    display:none;
+}
+
+.jp_menu li:hover .sub-menu{
+    display: block;
+    width: 90px;
+    top:50px;
+    padding-left: 0px;
+    position: absolute;
+    background-color: #373F47;
+}
+
+.jp_menu li:hover .sub-menu li{
+    height:30px;
+}
+
+.jp_menu li:hover .sub-menu li a{
+    display:block;
+    width:90px;
+    height:30px;
+    line-height:30px;
+    text-align:center;
+}
+
+.jp_menu li:hover .sub-menu li .sub-menu {
+    display:none;
+}
+
+.jp_menu li:hover .sub-menu li:hover .sub-menu{
+    display:block;
+    width:90px;
+    position:absolute;
+    top:0px;
+    left:90px;
+}
+
+/*
+ * 首页文章列表
+ **/
+.jp_post_list{
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+    border-left: solid 2px #3879D9;
+    -moz-box-shadow:3px 3px 4px #C8C8C8;
+    -webkit-box-shadow:3px 3px 4px #C8C8C8;
+    box-shadow:1px 1px 2px #C8C8C8;
+    filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
+    overflow-y:hidden; /* 对内容的上/下边缘进行裁剪 */
+    position:relative;
+}
+
+.post_title h2{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.post_title h2 a{
+    color: #000000;
+}
+
+.post_title h2 a:hover{
+    color: #3879D9;
+    text-decoration: none;
+}
+
+.post_meta_ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.post_meta_ul .inline-li{
+    font-size: 12px;
+    float: left;
+    color: #AAAAAA;
+    display: inline-block;
+    margin-right: 10px;
+
+    letter-spacing: normal;
+}
+
+.post_meta_ul .inline-li a{
+    color: #AAAAAA;
+}
+
+.post_meta_ul .inline-li a:hover{
+    color: #3879D9;
+}
+
+.jp_post_thumbnail .post-thumbnail{
+    margin: 7px 0;
+    padding: 0;
+}
+
+.jp_post_thumbnail .post-content{
+    margin: 7px 0;
+    padding: 10px 0 0 10px;
+}
+
+.jp_post_thumbnail .post-content .post-content-main {
+    padding: 0;
+}
+
+.post-view-all{
+    height: 25px;
+}
+
+.view-all{
+    position:absolute;
+    right: 0;
+}
+
+.jp_post_normal .post-content{
+    margin: 7px 0;
+    padding: 0;
+}
+
+.jp_post_normal .post-content .post-content-main {
+    padding: 0;
+}
+
+/*
+ * 侧栏widget
+ */
+.widget{
+    border-top: solid 2px #3879D9;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    background-color: #FFFFFF;
+    -moz-box-shadow:3px 3px 4px #C8C8C8;
+    -webkit-box-shadow:3px 3px 4px #C8C8C8;
+    box-shadow:1px 1px 2px #C8C8C8;
+    filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
+}
+
+.widget a{
+    color: #373F47;
+}
+
+.widget a:hover{
+    text-decoration: none;
+    color: #3879D9;
+}
+
+.widget h4{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 0 10px;
+    line-height: 35px;
+}
+
+.widget ul{
+    padding: 0 5px 2px 0;
+}
+
+.widget-popular span{
+    color: #AAAAAA;
+}
+
+.widget-comments ul{
+    list-style-type: none;
+    padding: 0 5px 5px 10px;
+}
+
+.widget-comments ul li{
+    height: 55px;
+}
+
+.widget-comments .gavatar{
+    float: left;
+    height: 55px;
+    margin-right: 5px;
+}
+
+.comments-con p{
+    margin: auto;
+    font-size: 12px;
+}
+
+.comments-name {
+    font-weight: bold;
+}
+
+.widget_self{
+    margin-bottom: 15px;
+}
+
+.widget_self_intro h4{
+    font-weight: bold;
+}
+
+.widget_self_intro a{
+    padding: 0 5px;
+}
+
+.i_weibo{
+    color: #E6162D;
+}
+
+.i_github{
+    color: #191717;
+}
+
+.i_facebook{
+    color: #4862A3;
+}
+
+.widget-archive ul{
+    list-style-type: none;
+    display: inline-block;
+    margin-bottom: auto;
+}
+
+.widget-archive ul li{
+    margin: 0 5px 5px 5px;
+    float: left;
+}
+
+.widget-archive ul li a{
+    color: #3879D9;
+    font-size: 14px;
+}
+
+.widget-archive ul li a:hover{
+    text-decoration: underline;
+}
+
+.widget-archive .btn{
+    padding: 5px 7px;
+    border-radius : 10px;
+}
+
+.widget-label p{
+    margin: 0 8px 8px 8px;
+}
+
+/*
+ * footer
+ */
+footer {
+    padding: 15px 0;
+}
+
+.footer{
+    color: #AAAAAA;
+    background-color: #373F47;
+    border-top: solid 1px #000000;
+}
+
+.footer a {
+    color: #AAAAAA;
+}
+
+.footer a:hover {
+    color: #1378F0;
+    text-decoration: none;
+}
+
+.footer p{
+    text-align: center;
+}
+
+.footer_links{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.footer_links li{
+    float: left;
+    margin-right: 20px;
+}
+
+.footer_links_label p{
+    text-align: left;
+}

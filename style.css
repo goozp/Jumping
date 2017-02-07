@@ -337,6 +337,70 @@ a{
 }
 
 /*
+ * 文章页
+ */
+.jp_page_post{
+    background-color: #FFFFFF;
+    border-radius: 12px;
+}
+
+.jp_page_post .post-title{
+    font-size: 24px;
+}
+
+.jp_page_post .post-title a{
+    color: #000000;
+}
+
+.jp_page_post .post-tags, .jp_page_post .post-tags a{
+    color: #AAAAAA;
+    margin-bottom: 5px;
+}
+
+.jp_page_post .post-title a:hover, .jp_page_post .post-tags a:hover{
+    color: #3879D9;
+    text-decoration: none;
+}
+
+.lastAndNext{
+    margin: 10px 0;
+}
+
+.lastAndNext-right, .lastAndNext-left{
+    padding: 0;
+}
+
+.lastAndNext-left p{
+    margin: 0;
+}
+
+.lastAndNext-right p{
+    float: right;
+    margin: 0;
+}
+
+.jp_page_post .post_body{
+    margin: auto;
+}
+
+.jp_page_comments{
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+}
+
+.jp_page_breadcrumbs{
+    padding-left: 0;
+}
+
+.jp_page_breadcrumbs .breadcrumb{
+    padding-left: 10px;
+    background-color: #F8F8F8;
+}
+
+
+
+/*
  * footer
  */
 footer {

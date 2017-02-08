@@ -25,9 +25,11 @@ body {
 
 }
 body {
-    font-family:  Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+    font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
     background-color:#F8F8F8;
     padding-top: 70px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 a{
     color: #3879D9;
@@ -39,6 +41,42 @@ table {
     border-spacing: 0
 }
 
+caption, td, th {
+    vertical-align: top;
+    text-align: left;
+    font-weight: 400
+}
+
+textarea {
+    margin: 0;
+    padding: 3px;
+    border: 1px solid #bdc7d8;
+    width: 100%;
+}
+
+blockquote {
+    display: block;
+    padding: 0 0 0 10px;
+    border-left: 3px solid #00A0F4;
+    vertical-align: baseline;
+    font-style: normal;
+    font-size: 100%;
+    line-height: 22px
+}
+
+.clearfix:after, .clearfix:before {
+    display: table;
+    content: ''
+}
+
+.clearfix:after {
+    clear: both;
+    overflow: hidden
+}
+
+.clearfix {
+    zoom: 1
+}
 
 /*
  * 导航栏样式 bootstrap
@@ -155,6 +193,8 @@ table {
     filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
     overflow-y:hidden; /* 对内容的上/下边缘进行裁剪 */
     position:relative;
+    word-break: normal;
+    word-wrap: break-word;
 }
 
 .post_title h2{
@@ -182,7 +222,6 @@ table {
     color: #AAAAAA;
     display: inline-block;
     margin-right: 10px;
-
     letter-spacing: normal;
 }
 
@@ -202,6 +241,8 @@ table {
 .jp_post_thumbnail .post-content{
     margin: 7px 0;
     padding: 10px 0 0 10px;
+    line-height:25px;
+    font-size: 15px;
 }
 
 .jp_post_thumbnail .post-content .post-content-main {
@@ -220,6 +261,7 @@ table {
 .jp_post_normal .post-content{
     margin: 7px 0;
     padding: 0;
+    font-size: 15px;
 }
 
 .jp_post_normal .post-content .post-content-main {
@@ -351,7 +393,7 @@ table {
 }
 
 .jp_page_post .post-title{
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .jp_page_post .post-title a{
@@ -404,6 +446,42 @@ table {
     background-color: #F8F8F8;
 }
 
+.jp_page_post .post-content{
+    padding: 5px 0;
+}
+
+.jp_page_post .post-content, .jp_page_post .post-content p{
+    word-break: normal;
+    word-wrap: break-word;
+    font-size: 15px;
+    line-height: 27px;
+}
+
+.post-content img{
+    max-width: 100%;
+    height: auto;
+    margin: 5px;
+}
+img.alignleft{
+    display: inline;
+    float: left;
+}
+img.alignright{
+    display: inline;
+    float: right;
+}
+img.aligncenter{
+    clear: both;
+    display: block;
+    margin:auto;
+}
+body.full-content .post-body h4,
+.post-content h4 {
+    display: block;
+    margin: 15px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #ededed;
+}
 
 
 /*

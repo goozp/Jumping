@@ -110,7 +110,7 @@ class Jumping_widget_new extends WP_Widget
                 'post_type' => 'post',
                 'numberposts' => $limit
             );
-            $posts = get_posts($args); ?>
+            $posts = query_posts($args); ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <li class="widget-new"><i class="fa-li fa fa-angle-double-right"></i>
                         <p>
@@ -118,6 +118,7 @@ class Jumping_widget_new extends WP_Widget
                         </p>
                     </li>
                 <?php endwhile;
+                wp_reset_query();
             $posts =null;
             ?>
         </ul>

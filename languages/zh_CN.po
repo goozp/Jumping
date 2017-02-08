@@ -24,6 +24,9 @@ msgstr "页面出错或者不是当前页面"
 msgid "You can also try to search the post!"
 msgstr "你可以通过搜索来找到想要的文章!"
 
+msgid "Sorry, no posts matched your criteria."
+msgstr "有点尴尬诶！该页无法显示。"
+
 #: archive.php:5 header.php:22 search.php:4 single.php:4
 msgid "Home"
 msgstr "首页"

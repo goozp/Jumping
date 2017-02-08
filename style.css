@@ -33,6 +33,12 @@ a{
     color: #3879D9;
 }
 
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
 
 /*
  * 导航栏样式 bootstrap

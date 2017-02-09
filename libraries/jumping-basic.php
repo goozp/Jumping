@@ -387,6 +387,8 @@ function jumping_comment( $comment, $args, $depth ) {
                     <?php if ( $comment->user_id == 1 ) {?>
                         <span class="label label-default comments-bozhu">博主</span>
                     <?php } ?>
+                    &nbsp;
+                    <?php CID_print_comment_flag(); echo ' ';CID_print_comment_browser(); ?>
                 </div>
                 <div class="comment-text"><?php comment_text() ?></div>
                 <div class="comment-date-reply">
@@ -394,6 +396,7 @@ function jumping_comment( $comment, $args, $depth ) {
                         <i class="fa fa-clock-o"></i>
                         <?php echo date('Y-m-d H:i',strtotime($comment->comment_date_gmt)); ?>
                     </span>
+                    &nbsp;&nbsp;&nbsp;
                     <i class="fa fa-reply"></i>
                     <?php comment_reply_link( array_merge( $args, array(
                         'depth'      => $depth,
@@ -408,7 +411,7 @@ function jumping_comment( $comment, $args, $depth ) {
     <li <?php comment_class('media'); ?> id="li-comment-<?php comment_ID() ?>">
         <div class="media-left">
             <div class="comments-data-avatar">
-                <?php echo get_avatar( $comment, $size = '40', $default = '', $alt = '', array('class' => 'img-circle',) ) ?>
+                <?php echo get_avatar( $comment, $size = '50', $default = '', $alt = '', array('class' => 'img-circle',) ) ?>
             </div>
         </div>
         <div class="media-body media-body-children" id="comment-<?php comment_ID(); ?>">
@@ -425,18 +428,23 @@ function jumping_comment( $comment, $args, $depth ) {
                     <?php if ( $comment->user_id == 1 ) {?>
                         <span class="label label-default comments-bozhu">博主</span>
                     <?php } ?>
+                &nbsp;
+                <?php CID_print_comment_flag(); echo ' ';CID_print_comment_browser(); ?>
             </div>
             <div class="comment-text">
-				<span class="comment-to"><a href="<?php echo "#comment-" . $parent_id; ?>"
-                                            title="<?php echo mb_strimwidth( strip_tags( apply_filters( 'the_content', $comment_parent->comment_content ) ), 0, 100, "..." ); ?>">@<?php echo $comment_parent->comment_author; ?></a>：
-                </span>
-                <?php echo get_comment_text(); ?>
+                <p>
+                    <span class="comment-to"><a href="<?php echo "#comment-" . $parent_id; ?>"
+                                                title="<?php echo mb_strimwidth( strip_tags( apply_filters( 'the_content', $comment_parent->comment_content ) ), 0, 100, "..." ); ?>">@<?php echo $comment_parent->comment_author; ?></a>：
+                    </span>
+                    <?php echo get_comment_text(); ?>
+                </p>
             </div>
             <div class="comment-date-reply">
                 <span class="comment-span comment-date">
                     <i class="fa fa-clock-o"></i>
                     <?php echo date('Y-m-d H:i',strtotime($comment->comment_date_gmt)); ?>
                 </span>
+                &nbsp;&nbsp;&nbsp;
                 <i class="fa fa-reply"></i>
                 <?php comment_reply_link( array_merge( $args, array(
                     'depth'      => $depth,

@@ -47,13 +47,6 @@ caption, td, th {
     font-weight: 400
 }
 
-textarea {
-    margin: 0;
-    padding: 3px;
-    border: 1px solid #bdc7d8;
-    width: 100%;
-}
-
 blockquote {
     display: block;
     padding: 0 0 0 10px;
@@ -64,18 +57,17 @@ blockquote {
     line-height: 22px
 }
 
-.clearfix:after, .clearfix:before {
-    display: table;
-    content: ''
+.avatar{
+    -webkit-transition:0.4s;
+    -webkit-transition:-webkit-transform 0.4s ease-out;
+    transition:transform 0.4s ease-out;
+    -moz-transition:-moz-transform 0.4s ease-out;
 }
 
-.clearfix:after {
-    clear: both;
-    overflow: hidden
-}
-
-.clearfix {
-    zoom: 1
+.avatar:hover{
+    transform:rotateZ(360deg);
+    -webkit-transform:rotateZ(360deg);
+    -moz-transform:rotateZ(360deg);
 }
 
 /*
@@ -186,6 +178,7 @@ blockquote {
 .jp_post_list{
     background-color: #FFFFFF;
     margin-bottom: 20px;
+    border-top: solid 1px #f0f0ee;
     border-left: solid 2px #3879D9;
     -moz-box-shadow:3px 3px 4px #C8C8C8;
     -webkit-box-shadow:3px 3px 4px #C8C8C8;
@@ -273,6 +266,7 @@ blockquote {
  */
 .widget{
     border-top: solid 2px #3879D9;
+    border-left: 1px solid #f0f0ee;
     margin-top: 0px;
     margin-bottom: 15px;
     background-color: #FFFFFF;
@@ -357,7 +351,6 @@ blockquote {
 
 .widget-archive ul{
     list-style-type: none;
-    display: inline-block;
     margin-bottom: auto;
 }
 
@@ -384,10 +377,17 @@ blockquote {
     margin: 0 8px 8px 8px;
 }
 
+.widget-label p a:hover{
+    background: #3879D9;
+    color: #FFFFFF;
+}
+
 /*
  * 文章页
  */
 .jp_page_post{
+    border-top: 1px solid #f0f0ee;
+    border-left: 1px solid #f0f0ee;
     background-color: #FFFFFF;
     border-radius: 12px;
     -moz-box-shadow:3px 3px 4px #C8C8C8;
@@ -485,14 +485,68 @@ body.full-content .post-body h4,
  * 评论
  */
 .comments-data{
+    border-top: 1px solid #f0f0ee;
+    border-left: 1px solid #f0f0ee;
     margin-top: 20px;
     background-color: #FFFFFF;
     border-radius: 12px;
-
     -moz-box-shadow:3px 3px 4px #C8C8C8;
     -webkit-box-shadow:3px 3px 4px #C8C8C8;
     box-shadow:1px 1px 2px #C8C8C8;
     filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
+}
+
+.comments-data-header p{
+    font-size: 16px;
+    margin: 10px;
+}
+
+.jp_comments_col{
+    margin-bottom: 7px;
+}
+
+.cancel-comment-reply{
+    float: right;
+}
+
+.comments_submit input{
+    float: right;
+    margin: 0 5px 7px 0 ;
+}
+.comments-data-title h4{
+    margin: 20px 0;
+}
+
+.comments-data-media{
+    border-top: solid 1px #EEEEEE;
+    font-size: 15px;
+}
+
+.comments-data-media .comment-person{
+    font-weight: bold;
+}
+
+.comments-bozhu{
+    font-family: Tahoma, Arial, sans-serif;;
+    background-color: #D83737;
+    padding: 2px 5px;
+}
+
+.comment{
+    border-top: solid 2px #EEEEEE;
+    padding: 20px 0;
+    margin: auto;
+
+}
+
+.comment-date-reply{
+    color: #AAAAAA;
+}
+.comment-date-reply a{
+    color: #AAAAAA;
+}
+.comment-date-reply a:hover{
+    color: #3879D9;
 }
 
 /*

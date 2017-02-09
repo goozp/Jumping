@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Jumping\n"
 "POT-Creation-Date: 2017-01-20 10:00+0800\n"
-"PO-Revision-Date: 2017-02-04 10:00+0800\n"
+"PO-Revision-Date: 2017-02-10 00:16+0800\n"
 "Last-Translator: \n"
 "Language-Team: guozi <gzp@gzpblog.com>\n"
 "Language: zh_CN\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -74,12 +74,15 @@ msgstr "发表评论"
 #: comments.php:41
 #, php-format
 msgid "You need <a href=\"%s\">login</a> to reply."
-msgstr "你需要<a href=\"%s\">登录</a>来评论."
+msgstr "你需要<a href=\"%s\">登录</a>来评论。"
 
 #: comments.php:44
 #, php-format
 msgid "Welcome <a href=\"%1$s\">%2$s</a> back，"
-msgstr "欢迎<a href=\"%1$s\">%2$s</a>归来，"
+msgstr "欢迎 <a href=\"%1$s\">%2$s</a> 归来，"
+
+msgid "Write a comment!"
+msgstr "写个评论吧~"
 
 #: comments.php:46
 msgid "Log out of this account"
@@ -95,7 +98,7 @@ msgstr "欢迎"
 
 #: comments.php:50
 msgid "back, "
-msgstr "归来, "
+msgstr "归来，"
 
 #: comments.php:51
 msgid "Edit »"
@@ -127,41 +130,41 @@ msgstr "下拉菜单"
 
 #: functions/libraries/class.tgm.php:164
 msgid "Install Required Plugins"
-msgstr ""
+msgstr "安裝所需的插件"
 
 #: functions/libraries/class.tgm.php:165
 msgid "Install Plugins"
-msgstr ""
+msgstr "安裝插件"
 
 #: functions/libraries/class.tgm.php:166
 #, php-format
 msgid "Installing Plugin: %s"
-msgstr ""
+msgstr "安裝插件: %s"
 
 #: functions/libraries/class.tgm.php:167
 msgid "Something went wrong."
-msgstr ""
+msgstr "出错了"
 
 #: functions/libraries/class.tgm.php:178 functions/libraries/class.tgm.php:491
 msgid "Return to Required Plugins Installer"
-msgstr ""
+msgstr "返回到所需的插件安裝程序"
 
 #: functions/libraries/class.tgm.php:179 functions/libraries/class.tgm.php:1847
 msgid "Plugin activated successfully."
-msgstr ""
+msgstr "插件成功激活"
 
 #: functions/libraries/class.tgm.php:180
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
+msgstr "已成功安裝並启用所有插件 %1$s"
 
 #: functions/libraries/class.tgm.php:181
 msgid "Dismiss this notice."
-msgstr ""
+msgstr "忽略此提示。"
 
 #: functions/libraries/class.tgm.php:518 functions/libraries/class.tgm.php:2059
 msgid "Return to the Dashboard"
-msgstr ""
+msgstr "返回您的控制台中心"
 
 #: functions/libraries/class.tgm.php:546
 #, php-format
@@ -451,7 +454,7 @@ msgstr "置顶"
 
 #: sidebar.php:3
 msgid "Please set up widgets at dashboard!"
-msgstr "请在后台设置小工具!"
+msgstr "请在后台设置小工具！"
 
 #~ msgid "Nickname"
 #~ msgstr "昵称"

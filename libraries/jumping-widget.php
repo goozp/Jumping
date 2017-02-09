@@ -305,7 +305,7 @@ class Jumping_widget_archive extends WP_widget{
         $showType = $showType ? $showType : 'monthly';
         $limit = $limit ? $limit : '';
         ?>
-        <div class="widget widget-archive">
+        <div class="widget widget-archive clearfix">
             <h4><i class="fa fa-archive"></i>&nbsp;<?php _e( 'Archive list', JUMPING_NAME ); ?></h4>
             <ul>
                 <?php if ($limit){

@@ -1,4 +1,5 @@
-<div id="comments">
+<div class="col-xs-12 col-sm-12 jp_page_comments">
+	<div class="row">
 	<?php
 	if ( isset( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
 		die(__('Please don\'t directly loading the page, thanks!', JUMPING_NAME));
@@ -11,30 +12,33 @@
 	}
 	?>
 
+		<!-- 评论显示 -->
 	<?php if ( have_comments() ) : ?>
-		<div class="comments-data">
+		<div class="col-xs-12 col-sm-12 comments-data comments-data-header">
 			<?php _e( 'Comments' , JUMPING_NAME); ?> (<?php echo $post->comment_count;?>)
 		</div>
-		<div class="comments-container">
-			<ol class="commentlist clearfix">
-				<?php wp_list_comments( 'type=comment' ); ?>
-			</ol>
-			<div class="comments-data comments-data-footer clearfix">
+		<div class="col-xs-12 col-sm-12 comments-data comments-data-body">
+			<ul class="media-list comments-data-media clearfix">
+				<?php wp_list_comments( array( 'type' => 'comment', 'callback' => 'jumping_comment' ) ); ?>
+			</ul>
+			<div class="comments-data-footer clearfix">
 				<?php if ( 'open' != $post->comment_status ) : ?>
-					<h2 class="comments-title"><?php _e( 'Comments Closed.' , JUMPING_NAME); ?></h2>
+					<h3 class="comments-title"><?php _e( 'Comments Closed.' , JUMPING_NAME); ?></h3>
 				<?php else : ?>
-					<div class="comment-topnav"><?php paginate_comments_links( 'prev_text=«&next_text=»' ); ?></div>
-					<h2 class="comments-title"><?php _e( 'Leave a reply' , JUMPING_NAME); ?></h2>
+					<div class="comment-topnav text-center"><?php paginate_comments_links( 'prev_text=«&next_text=»' ); ?></div>
 				<?php endif; ?>
 			</div>
 		</div>
 	<?php else : ?>
 		<?php if ( 'open' != $post->comment_status ) : ?>
-			<h2 class="comments-title"><?php _e( 'Comments Closed.' , JUMPING_NAME); ?></h2>
+			<h3 class="comments-title"><?php _e( 'Comments Closed.' , JUMPING_NAME); ?></h3>
 		<?php endif; ?>
 	<?php endif; ?>
+
+		<!-- 发表评论 -->
 	<?php if ( comments_open() ) : ?>
-		<div id="respond" class="respond">
+		<div  class="col-xs-12 col-sm-12 comments-data respond" id="respond">
+			<h3 class="comments-title"><?php _e( 'Leave a reply' , JUMPING_NAME); ?> <small>为了网站的健康成长，请友爱发言~</small></h3>
 		<form method="post" action="<?php echo site_url('wp-comments-post.php');?>" id="comment_form">
 		<div id="cancel-comment-reply"><?php cancel_comment_reply_link() ?></div>
 		<?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
@@ -92,5 +96,5 @@
 			</div>
 		<?php endif; ?>
 	<?php endif; ?>
-
+	</div>
 </div>

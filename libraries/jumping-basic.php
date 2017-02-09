@@ -353,7 +353,6 @@ function jumping_pagenavi( $space = 5 ) {
  */
 function jumping_comment( $comment, $args, $depth ) {
     $GLOBALS['comment'] = $comment;
-
     global $commentcount;
 
     if ( ! $commentcount ) {
@@ -364,53 +363,56 @@ function jumping_comment( $comment, $args, $depth ) {
 
     if ( ! $comment->comment_parent ) {
         //$email  = $comment->comment_author_email;
-        $avatar = get_avatar( $comment, $size = '50' );
+        $avatar = get_avatar( $comment, $size = '50', $default = '', $alt = '', array('class' => 'img-circle') );
         ?>
-        <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-        <div id="comment-<?php comment_ID(); ?>" class="comment-body">
-            <div class="comment-avatar"><?php echo $avatar; ?></div>
-					<span class="comment-floor"><?php ++ $commentcount;
-                        switch ( $commentcount ) {
-                            case 1:
-                                _e( 'Sofa', MUTHEME_NAME );
-                                break;
-                            case 2:
-                                _e( 'Bench', MUTHEME_NAME );
-                                break;
-                            case 3:
-                                _e( 'Floor', MUTHEME_NAME );
-                                break;
-                            default:
-                                printf( __( '%s Floor', MUTHEME_NAME ), $commentcount );
-                        } ?></span>
-
-            <div class="comment-data">
-				<span class="comment-span <?php if ( $comment->user_id == 1 ) {
-                    echo "comment-author";
-                } ?>"><?php printf( '%s', get_comment_author_link() ) ?></span>
-				<span
-                    class="comment-span comment-date"><?php echo strtotime($comment->comment_date_gmt); ?></span>
-            </div>
-            <div class="comment-text"><?php comment_text() ?></div>
-            <div class="comment-reply"><?php comment_reply_link( array_merge( $args, array(
-                    'depth'      => $depth,
-                    'max_depth'  => $args['max_depth'],
-                    'reply_text' => __( 'Reply', MUTHEME_NAME )
-                ) ) ) ?></div>
+        <li <?php comment_class('media'); ?> id="li-comment-<?php comment_ID() ?>">
+        <div class="media-left text-center">
+            <div class="comments-data-avatar">
+                <?php echo $avatar; ?>
+            </div>  
+            <span class="comments-data-floor">
+                <?php
+                ++ $commentcount;
+                printf( __( '%s Floor', JUMPING_NAME ), $commentcount );
+                ?>
+            </span>
         </div>
+        <div class="media-body" id="comment-<?php comment_ID(); ?>">
+                <div class="comment-person">
+                    <span class="comment-span <?php if ( $comment->user_id == 1 ) {
+                        echo "comment-author";
+                    } ?>">
+                        <?php printf( '%s', get_comment_author_link() ) ?>
+                    </span>
+                    <?php if ( $comment->user_id == 1 ) {?>
+                        <span class="label label-default comments-bozhu">博主</span>
+                    <?php } ?>
+                </div>
+                <div class="comment-text"><?php comment_text() ?></div>
+                <div class="comment-date-reply">
+                    <span class="comment-span comment-date">
+                        <i class="fa fa-clock-o"></i>
+                        <?php echo date('Y-m-d H:i',strtotime($comment->comment_date_gmt)); ?>
+                    </span>
+                    <i class="fa fa-reply"></i>
+                    <?php comment_reply_link( array_merge( $args, array(
+                        'depth'      => $depth,
+                        'max_depth'  => $args['max_depth'],
+                        'reply_text' => __( 'Reply', JUMPING_NAME )
+                    ) ) ) ?>
+                </div>
+        </div>
+        </li>
     <?php } else {
         ?>
-    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-        <div id="comment-<?php comment_ID(); ?>" class="comment-body comment-children-body">
-            <div class="comment-avatar"><?php echo get_avatar( $comment, $size = '30' ); ?></div>
-			<span
-                class="comment-floor"><?php comment_reply_link( array_merge( $args, array(
-                    'depth'      => $depth,
-                    'max_depth'  => $args['max_depth'],
-                    'reply_text' => __( 'Reply', JUMPING_NAME )
-                ) ) ) ?></span>
-
-            <div class="comment-data">
+    <li <?php comment_class('media'); ?> id="li-comment-<?php comment_ID() ?>">
+        <div class="media-left">
+            <div class="comments-data-avatar">
+                <?php echo get_avatar( $comment, $size = '40', $default = '', $alt = '', array('class' => 'img-circle',) ) ?>
+            </div>
+        </div>
+        <div class="media-body media-body-children" id="comment-<?php comment_ID(); ?>">
+            <div class="comment-person">
 				<span class="comment-span <?php if ( $comment->user_id == 1 ) {
                     echo "comment-author";
                 } ?>">
@@ -420,14 +422,29 @@ function jumping_comment( $comment, $args, $depth ) {
                     printf( '%s', get_comment_author_link() );
                     ?>
 				</span>
-				<span
-                    class="comment-span comment-date"><?php echo strtotime($comment->comment_date_gmt); ?></span>
+                    <?php if ( $comment->user_id == 1 ) {?>
+                        <span class="label label-default comments-bozhu">博主</span>
+                    <?php } ?>
             </div>
             <div class="comment-text">
 				<span class="comment-to"><a href="<?php echo "#comment-" . $parent_id; ?>"
-                                            title="<?php echo mb_strimwidth( strip_tags( apply_filters( 'the_content', $comment_parent->comment_content ) ), 0, 100, "..." ); ?>">@<?php echo $comment_parent->comment_author; ?></a>：</span>
+                                            title="<?php echo mb_strimwidth( strip_tags( apply_filters( 'the_content', $comment_parent->comment_content ) ), 0, 100, "..." ); ?>">@<?php echo $comment_parent->comment_author; ?></a>：
+                </span>
                 <?php echo get_comment_text(); ?>
             </div>
+            <div class="comment-date-reply">
+                <span class="comment-span comment-date">
+                    <i class="fa fa-clock-o"></i>
+                    <?php echo date('Y-m-d H:i',strtotime($comment->comment_date_gmt)); ?>
+                </span>
+                <i class="fa fa-reply"></i>
+                <?php comment_reply_link( array_merge( $args, array(
+                    'depth'      => $depth,
+                    'max_depth'  => $args['max_depth'],
+                    'reply_text' => __( 'Reply', JUMPING_NAME )
+                ) ) ) ?>
+            </div>
         </div>
+    </li>
     <?php }
 }

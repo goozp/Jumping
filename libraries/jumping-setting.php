@@ -130,33 +130,54 @@ class jumping_setting {
         <div class="wrap">
             <h1>欢迎使用<?php echo JUMPING_NAME; ?></h1>
 
-            <div class="about-text">当前版本为：<?php echo JUMPING_VERSION; ?></div>
-            <div class="changelog">
-                <div class="feature-section under-the-hood one-col">
-                    <div class="col">
-                        <h3>主题说明</h3>
-                        <ul>
-                            <li>主题提供五个已有样式的侧边栏小工具：热门文章，最新文章，标签云，最新评论，归档；</li>
-                            <li>暂时不支持后台更新。</li>
-                            <li>禁止加载Google Fonts???</li>
-                            <li>关闭了Wordpress默认要输出的 head 部分功能???</li>
-                        </ul>
-                        <p>
-                            依赖插件：WP-PostViews（文章浏览量统计插件）
-                        </p>
-                        <p>
-                            小图标：采用<a href="http://fontawesome.dashgame.com/" target="_blank">Font Awesome v4.7.0</a>，具体图标对应class请前往官网查看。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="feature-section under-the-hood one-col">
-                    <div class="col">
-                        <h3>共同努力</h3>
-
-                        <p>欢迎对该主题进行完善：<a href="">url</a></p>
-                    </div>
-                </div>
+            <div class="help-title">
+                当前版本为：<?php echo JUMPING_VERSION; ?>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                作者：<a href="http://www.gzpblog.com">锅子</a>
+            </div>
+            <hr>
+            <div class="theme-about">
+                <h3>主题特色</h3>
+                <ol>
+                    <li>采用bootstrap构建</li>
+                    <li>支持自适应，适配移动端设备</li>
+                    <li>目前提供五个已有样式的侧边栏小工具：热门文章，最新文章，标签云，最新评论，归档</li>
+                    <li>模板页面提供一个archives归档页</li>
+                    <li>去除了加载Google Fonts，emoji表情等以优化速度</li>
+                    <li>优化了Wordpress默认输出的 head 加载</li>
+                    <li>暂时不支持后台更新</li>
+                </ol>
+            </div>
+            <div class="theme-things">
+                <h3>主题说明</h3>
+                <ul>
+                    <li>依赖插件：WP-PostViews（文章浏览量统计插件）</li>
+                    <li>
+                        小图标：采用<a href="http://fontawesome.dashgame.com/" target="_blank">Font Awesome v4.7.0</a>，具体图标对应class请前往官网查看。
+                    </li>
+                </ul>
+            </div>
+            <div class="using-about">
+                <h3>部分功能使用说明</h3>
+                <ol>
+                    <li>使用主题后请先在主题设置页面设置网站信息，非常重要，description和keywords一经设置最好少修改。</li>
+                    <li>archives归档页使用：直接新建一个独立页面，模板选择Archive归档页面即可。</li>
+                </ol>
+            </div>
+            <div class="to-do">
+                <h3>待完善</h3>
+                <ol>
+                    <li>顶部导航适配移动端</li>
+                    <li>底部左侧空旷</li>
+                    <li>底部内容右侧边栏个人板块整合进主题设置</li>
+                    <li>顶部导航一级栏目过多时样式会出现混乱</li>
+                    <li>Gravatar头像的优化</li>
+                    <li>楼中楼评论时的用户体验</li>
+                </ol>
+            </div>
+            <div class="feature-section">
+                <h3>主题的未来</h3>
+                <span>欢迎对该主题进行完善，github地址为：<a href="https://github.com/ZpGuo/Jumping" target="_blank">jumping</a>，可以提issue或者直接fork。</span>
             </div>
         </div>
         <?php

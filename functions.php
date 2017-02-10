@@ -30,7 +30,7 @@ load_theme_textdomain( JUMPING_NAME, jumping_path( 'languages' ) );
 /**
  * 导入显示访客信息文件
  */
-include("show-useragent/show-useragent.php");
+include("public/show-useragent/show-useragent.php");
 
 /**
  * 启用rss feed

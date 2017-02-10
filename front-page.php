@@ -59,7 +59,7 @@
                         if ( $post_thumbnail["exist"] ) : ?>
                             <div class="col-xs-12 col-sm-2 col-lg-2 post-thumbnail">
                                 <a href="<?php the_permalink() ?>" rel="bookmark">
-                                    <img class="lazy  img-thumbnail"
+                                    <img class="lazy img-thumbnail"
                                          src="<?php echo jumping_thumbnail_url(jumping_image('placeholder.png')); ?>"
                                          data-original="<?php echo jumping_thumbnail_url($post_thumbnail); ?>"
                                          alt="<?php the_title(); ?>" width="130" height="130"/>
@@ -112,7 +112,7 @@
     </div>
 
     <!-- 右侧边栏 -->
-    <div class="col-xs-12 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+    <div class="col-xs-12 col-sm-3" id="sidebar">
         <div class="widget_self">
             <img src="<?php echo jumping_image('jumbotron_self.png'); ?>" class="img-responsive img-circle center-block" alt="侧栏个人头像" width="120px">
             <div class="widget_self_intro text-center">
@@ -123,7 +123,7 @@
             </div>
         </div>
         <?php get_sidebar(); ?>
-    </div><!--/.sidebar-offcanvas-->
+    </div>
 </div>
 
 

@@ -9,8 +9,6 @@
 
     <?php jp_header(); ?>
 
-    <!-- styles -->
-    <link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
     <link rel="icon" href="../../favicon.ico">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -68,7 +66,7 @@
                 <li id="navbar-search">
                     <form method="GET" class="navbar-form navbar-right" role="search"  action="<?php bloginfo( 'home' ); ?>/">
                         <div class="input-group">
-                            <input type="text" name="s" id="sheji-search" class="form-control" placeholder="<?php _e( 'Search keyword', JUMPING_NAME ); ?>" maxlength="100">
+                            <input type="text" name="s" id="jp-search" class="form-control" placeholder="<?php _e( 'Search keyword', JUMPING_NAME ); ?>" maxlength="100">
                             <span class="input-group-btn">
                                 <button id="jp-search-button" class="btn btn-default" type="submit">
                                     <span class="glyphicon glyphicon-search"></span>

@@ -90,18 +90,37 @@ function jumping_toolbar_link( $wp_admin_bar ) {
     $wp_admin_bar->add_node( $args );
 }
 
-/* 导入js文件 */
+/* 加载js,css文件 */
 function jumping_scripts_with_jquery()
 {
-    // Register the script like this for a theme:
+    //main css
+    wp_enqueue_style( 'style', get_bloginfo( 'stylesheet_url' ) );
+    //404 css
+    wp_register_style( '404', get_template_directory_uri() . '/public/css/404.css' );
+    if ( is_404() ) {
+        wp_enqueue_style( '404' );
+    }
+
+    //JQuery js
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', jumping_script( 'jquery.min.js' ), false, '1.11.3' );
+    wp_enqueue_script( 'jquery', false, false, '1.11.3' );
+    // bootstrap js
     wp_register_script( 'custom-script', get_template_directory_uri() . '/public/bootstrap/js/bootstrap.min.js', array( 'jquery' ) );
-    // For either a plugin or a theme, you can then enqueue the script:
     wp_enqueue_script( 'custom-script' );
+    //jumping js
     wp_enqueue_script( 'jumping-main', jumping_script( 'jumping.js' ), null, JUMPING_VERSION, false );
+    //archives.js
+    if( is_page_template( 'templates/archives.php' ) ){
+        wp_enqueue_script( 'jumping-archives', jumping_script( 'archives.js' ), null, JUMPING_VERSION, false );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'jumping_scripts_with_jquery' );
 
-// 溢出WordPress Emoji表情
+
+
+// 移除WordPress Emoji表情
 remove_action( 'admin_print_scripts' ,	'print_emoji_detection_script');
 remove_action( 'admin_print_styles'  ,	'print_emoji_styles');
 remove_action( 'wp_head'             ,	'print_emoji_detection_script',	7);
@@ -109,5 +128,23 @@ remove_action( 'wp_print_styles'     ,	'print_emoji_styles');
 remove_filter( 'the_content_feed'    ,	'wp_staticize_emoji');
 remove_filter( 'comment_text_rss'    ,	'wp_staticize_emoji');
 remove_filter( 'wp_mail'             ,	'wp_staticize_emoji_for_email');
+// 移除头部wp_head没必要的加载
+remove_action( 'wp_head', 'rsd_link' ); //针对Blog的远程离线编辑器接口
+remove_action( 'wp_head', 'wlwmanifest_link' ); //Windows Live Writer接口
+remove_action( 'wp_head', 'index_rel_link' ); //移除当前页面的索引
+remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); //移除后面文章的url
+remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); //移除最开始文章的url
+remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );//自动生成的短链接
+remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 ); ///移除相邻文章的url
+remove_action( 'wp_head', 'wp_generator' ); // 移除版本号
+
+/* 过滤google字体 */
+add_filter( 'gettext_with_context', 'jp_google_fonts', 888, 4 );
+function jp_google_fonts( $translations, $text, $context, $domain ) {
+    if ( 'Open Sans font: on or off' == $context && 'on' == $text ) {
+        $translations = 'off';
+    }
+    return $translations;
+}
 
 ?>

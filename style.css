@@ -233,7 +233,7 @@ blockquote {
 
 .jp_post_thumbnail .post-content{
     margin: 7px 0;
-    padding: 10px 0 0 10px;
+    padding-left:10px;
     line-height:25px;
     font-size: 15px;
 }
@@ -275,6 +275,7 @@ blockquote {
     box-shadow:1px 1px 2px #C8C8C8;
     filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
 }
+
 
 .widget a{
     color: #373F47;

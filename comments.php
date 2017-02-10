@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-12 jp_page_comments">
+<div class="col-xs-12 col-sm-12 jp_page_comments" id="comments">
 	<div class="row">
 	<?php
 	if ( isset( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) {
@@ -69,6 +69,7 @@
 				</p>
 			</div>
 			<?php else : ?>
+
 				<?php if ( $comment_author != "" ): ?>
 					<p class="title welcome">
 						<?php _e( 'Welcome', JUMPING_NAME ); ?><?php printf(' <strong>%s</strong> ', $comment_author ) ?><?php _e( 'back, ' , JUMPING_NAME); ?>
@@ -118,10 +119,10 @@
 
 			<?php comment_id_fields(); ?>
 			<?php do_action( 'comment_form', $post->ID ); ?>
+				<?php endif; ?>
 		</form>
 		</div>
-		<?php endif; ?>
-	<?php endif; ?>
 	</div>
+	<?php endif; ?>
 	</div>
 </div>

@@ -93,7 +93,7 @@
         </div>
 
         <!-- 右侧边栏 -->
-        <div class="col-xs-12 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+        <div class="col-xs-12 col-sm-3" id="sidebar">
             <div class="widget_self">
                 <img src="<?php echo jumping_image('jumbotron_self.png'); ?>" class="img-responsive img-circle center-block" alt="侧栏个人头像" width="120px">
                 <div class="widget_self_intro text-center">
@@ -104,6 +104,6 @@
                 </div>
             </div>
             <?php get_sidebar(); ?>
-        </div><!--/.sidebar-offcanvas-->
+        </div>
     </div>
 <?php get_footer(); ?>

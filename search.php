@@ -9,7 +9,7 @@
 						<li><a rel="bookmark" href="<?php echo home_url(); ?>"><?php _e('Home', JUMPING_NAME);?></a></li>
 						<?php the_post(); ?>
 						<li><span class="breadcrumb-arrow"></span><?php _e( 'Search keyword', JUMPING_NAME ); ?></li>
-						->
+						<i class="fa fa-caret-right"></i>
 						<span class="breadcrumb-arrow"></span>
 						<?php the_search_query(); ?>
 					</ol>
@@ -99,7 +99,12 @@
 							<?php endif; ?>
 						</div>
 					</div>
-				<?php endwhile; endif; ?>
+				<?php endwhile; else: ?>
+					<div class="col-xs-12 col-sm-12 col-lg-12">
+						<h2><?php _e('抱歉。'); ?></h2>
+						<p><?php _e('没有内容！'); ?></p>
+					</div>
+				<?php endif; ?>
 			</div>
 
 			<div class="row">

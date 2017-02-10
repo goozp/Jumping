@@ -190,6 +190,10 @@ blockquote {
     word-wrap: break-word;
 }
 
+.post-sticky{
+    font-family:YouYuan,'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
 .post_title h2{
     font-size: 18px;
     font-weight: bold;
@@ -528,7 +532,7 @@ body.full-content .post-body h4,
 }
 
 .comments-bozhu{
-    font-family: Tahoma, Arial, sans-serif;;
+    font-family: Tahoma, Arial, sans-serif;
     background-color: #D83737;
     padding: 2px 5px;
 }

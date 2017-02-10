@@ -2,141 +2,87 @@
 /*
 Template Name: Archive 归档页面
 */
-get_header(); ?>
-	<div id="primary">
-		<div class="post-content">
-			<?php $the_query = new WP_Query( 'posts_per_page=-1&ignore_sticky_posts=1' ); //update: 加上忽略置顶文章
-			$year=0; $mon=0; $i=0; $j=0;
-			$all = array();
-			$output = '<div id="archives">';
-			while ( $the_query->have_posts() ) : $the_query->the_post();
-				$year_tmp = get_the_time('Y');
-				$mon_tmp = get_the_time('n');
-				//var_dump($year_tmp);
-				$y=$year; $m=$mon;
-				if ($mon != $mon_tmp && $mon > 0) $output .= '</div></div>';
-				if ($year != $year_tmp) {
-					$year = $year_tmp;
-					$all[$year] = array();
-				}
+/* Archives list */
+function zww_archives_list() {
+	if( !$output = get_option('zww_db_cache_archives_list') ){
+		$output = '<div id="archives">';
+		$args = array(
+			'post_type' => 'post', //如果你有多个 post type，可以这样 array('post', 'product', 'news')
+			'posts_per_page' => -1, //全部 posts
+			'ignore_sticky_posts' => 1 //忽略 sticky posts
 
-				if ($mon != $mon_tmp) {
-					$mon = $mon_tmp;
-					array_push($all[$year], $mon);
-					$output .= "<div class='archive-title' id='arti-$year-$mon'><h3>$year-$mon</h3><div class='archives archives-$mon' data-date='$year-$mon'>"; //输出月份
-				}
-				$output .= '<div class="brick"><a href="'.get_permalink() .'"><span class="time">'.get_the_time('n-d').'</span>'.get_the_title() .'<em>('. get_comments_number('0', '1', '%') .')</em></a></div>'; //输出文章日期和标题
-			endwhile;
-			wp_reset_postdata();
-			$output .= '</div></div></div>';
-			echo $output;
+		);
+		$the_query = new WP_Query( $args );
+		$posts_rebuild = array();
+		$year = $mon = 0;
+		while ( $the_query->have_posts() ) : $the_query->the_post();
+			$post_year = get_the_time('Y');
+			$post_mon = get_the_time('m');
+			$post_day = get_the_time('d');
+			if ($year != $post_year) $year = $post_year;
+			if ($mon != $post_mon) $mon = $post_mon;
+			$posts_rebuild[$year][$mon][] = '<li class="list-group-item">'. get_the_time('d日: ') .'<a href="'. get_permalink() .'">'. get_the_title() .'</a> <span class="badge">'. get_comments_number('0', '1', '%') .'</span></li>';
+		endwhile;
+		wp_reset_postdata();
 
-			$html = "";
-			$year_now = date("Y");
-			foreach($all as $key => $value){
-				$html .= "<li class='year' id='year-$key'><a href='#' class='year-toogle' id='yeto-$key'>$key</a><ul class='monthall'>";
-				for($i=12; $i>0; $i--){
-					if($key == $year_now && $i > $value[0]) continue;
-					$html .= in_array($i, $value) ? ("<li class='month monthed' id='mont-$key-$i'>$i</li>") : "";
+		foreach ($posts_rebuild as $key_y => $y) {
+			$output .= '<h3 class="al_year">'. $key_y .' 年</h3><ul class="al_mon_list nav nav-pills nav-stacked">'; //输出年份
+			foreach ($y as $key_m => $m) {
+				$posts = ''; $i = 0;
+				foreach ($m as $p) {
+					++$i;
+					$posts .= $p;
 				}
-				$html .= "</ul></li>";
+				$output .= '<li><span class="al_mon">'. $key_m .' 月 <em> ( '. $i .' 篇文章 )</em></span><ul class="al_post_list list-group">'; //输出月份
+				$output .= $posts; //输出 posts
+				$output .= '</ul></li>';
 			}
-			?>
+			$output .= '</ul>';
+		}
+
+		$output .= '</div>';
+		update_option('zww_db_cache_archives_list', $output);
+	}
+	echo $output;
+}
+
+
+get_header(); ?>
+	<div class="container">
+		<div class="col-xs-12 col-sm-9">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4>归档（注：点击月份可以展开）<span><a class="btn btn-primary " id="al_expand_collapse" href="#">全部展开/收缩</a> <em></em></span></h4>
+							<p></p>
+						</div>
+						<div class="panel-body">
+							<?php zww_archives_list(); ?>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
 		</div>
-		<div id="archive-nav">
-			<ul class="archive-nav"><?php echo $html;?></ul>
+
+		<div class="col-xs-12 col-sm-3" id="sidebar">
+			<div class="widget_self">
+				<img src="<?php echo jumping_image('jumbotron_self.png'); ?>" class="img-responsive img-circle center-block" alt="侧栏个人头像" width="120px">
+				<div class="widget_self_intro text-center">
+					<h4>锅子</h4>
+					<a href="#" class="i_weibo"><i class="fa fa-weibo  fa-lg"></i></a>
+					<a href="#" class="i_github"><i class="fa fa-github fa-lg"></i></a>
+					<a href="#" class="i_facebook"><i class="fa fa-facebook-square fa-lg"></i></a>
+				</div>
+			</div>
+			<?php get_sidebar(); ?>
 		</div>
 	</div>
-	<style>
-		.post-content {
-			float: right;
-			width: 550px;
-		}
-		#archive-nav {
-			float: left;
-			width: 50px
-		}
 
-		.archive-nav {
-			display: block;
-			position: fixed;
-			background: #f9f9f9;
-			width: 40px;
-			text-align: center
-		}
 
-		.year {
-			border-top: 1px solid #ddd
-		}
 
-		.month {
-			color: #ccc;
-			padding: 5px;
-			cursor: pointer;
-			background: #f9f9f9
-		}
 
-		.month.monthed {
-			color: #777
-		}
 
-		.month.selected,.month:hover {
-			background: #f2f2f2
-		}
-
-		.monthall {
-			display: none
-		}
-
-		.year.selected .monthall {
-			display: block
-		}
-
-		.year-toogle {
-			display: block;
-			padding: 5px;
-			text-decoration: none;
-			background: #eee;
-			color: #333;
-			font-weight: bold
-		}
-
-		.archive-title {
-			padding-bottom: 40px
-		}
-
-		.brick {
-			margin-bottom: 10px
-		}
-
-		.archives a {
-			position: relative;
-			display: block;
-			padding: 10px;
-			background-color: #f9f9f9;
-			color: #333;
-			font-style: normal;
-			line-height: 18px
-		}
-
-		.time {
-			color: #888;
-			padding-right: 10px;
-		}
-
-		.archives a:hover {
-			background: #eee
-		}
-
-		#archives h3 {
-			padding-bottom: 10px;
-		}
-
-		.brick em {
-			color: #aaa;
-			padding-left: 10px;
-		}
-
-	</style>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

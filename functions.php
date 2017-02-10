@@ -110,9 +110,11 @@ function jumping_scripts_with_jquery()
     wp_enqueue_script( 'custom-script' );
     //jumping js
     wp_enqueue_script( 'jumping-main', jumping_script( 'jumping.js' ), null, JUMPING_VERSION, false );
-    //archives.js
+    //archives.js archives.css
     if( is_page_template( 'templates/archives.php' ) ){
         wp_enqueue_script( 'jumping-archives', jumping_script( 'archives.js' ), null, JUMPING_VERSION, false );
+        wp_register_style( 'archives', get_template_directory_uri() . '/public/css/archives.css' );
+        wp_enqueue_style( 'archives' );
     }
 
 }
@@ -146,5 +148,11 @@ function jp_google_fonts( $translations, $text, $context, $domain ) {
     }
     return $translations;
 }
+
+/* 新发表文章,修改文章时清空 zww_archives_list归档页缓存 */
+function clear_db_cache_archives_list() {
+    update_option('zww_db_cache_archives_list', '');
+}
+add_action('save_post', 'clear_db_cache_archives_list');
 
 ?>

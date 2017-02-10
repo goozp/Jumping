@@ -23,7 +23,7 @@
                     <h2>
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
                         <?php if ( is_sticky() ) { ?>
-                            <span class="post-sticky"><?php _e( 'Stick', JUMPING_NAME ); ?></span>
+                            <span class="post-sticky label label-danger"><?php _e( 'Stick', JUMPING_NAME ); ?></span>
                         <?php } ?>
                     </h2>
                 </div>

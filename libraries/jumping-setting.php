@@ -143,6 +143,7 @@ class jumping_setting {
                     <li>支持自适应，适配移动端设备</li>
                     <li>目前提供五个已有样式的侧边栏小工具：热门文章，最新文章，标签云，最新评论，归档</li>
                     <li>模板页面提供一个archives归档页</li>
+                    <li>底部footer提供普通和微信二维码两种方案</li>
                     <li>去除了加载Google Fonts，emoji表情等以优化速度</li>
                     <li>优化了Wordpress默认输出的 head 加载</li>
                     <li>暂时不支持后台更新</li>
@@ -167,9 +168,8 @@ class jumping_setting {
             <div class="to-do">
                 <h3>待完善</h3>
                 <ol>
-                    <li>顶部导航适配移动端</li>
                     <li>底部左侧空旷</li>
-                    <li>底部内容右侧边栏个人板块整合进主题设置</li>
+                    <li>侧边栏个人板块整合进主题设置</li>
                     <li>顶部导航一级栏目过多时样式会出现混乱</li>
                     <li>Gravatar头像的优化</li>
                     <li>楼中楼评论时的用户体验</li>

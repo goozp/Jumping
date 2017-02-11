@@ -81,11 +81,6 @@ blockquote {
     box-shadow:1px 1px 2px #C8C8C8;
     filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
 }
-
-.navbar .container a{
-
-}
-
 /* logo */
 .navbar-brand{
     font-family: "Microsoft YaHei UI";
@@ -96,80 +91,131 @@ blockquote {
 .navbar-brand:hover{
     color: #1378F0;
 }
-
-#navbar-search{
-
-}
-
 /*导航菜单*/
-.jp_nav{
-    float: left;
-    height: 50px;
-    width: 720px;
-}
-
 .jp_nav a{
     color: #AAAAAA;
 }
 
+.jp_menu{
+    padding:0;
+}
+
 .jp_menu li{
-    display: block;
     list-style-type: none;
-    width: 90px;
-    height: 50px;
-    float: left;
-    position:relative;
+    margin: 5px 0;
+    padding:0;
 }
 
 .jp_menu li a{
-    display: block;
-    width: 90px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-}
-
-.jp_menu li a:hover{
-    text-decoration: none;
-    background-color: #3879D9;
-    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 30px;
 }
 
 .sub-menu{
-    display:none;
+    display: none;
 }
 
-.jp_menu li:hover .sub-menu{
-    display: block;
-    width: 90px;
-    top:50px;
-    padding-left: 0px;
-    position: absolute;
-    background-color: #373F47;
+@media (min-width: 768px) {
+    /*导航菜单*/
+    .jp_nav{
+        float: left;
+        height: 50px;
+        width: 550px;
+    }
+    .jp_menu li{
+        list-style-type: none;
+        margin: 10px 20px 10px 0;
+        padding:0;
+        float: left;
+    }
+    #navbar-search{
+        display: none;
+    }
+
+    .jp_menu li a{
+        font-size: 16px;
+        line-height: 30px;
+    }
 }
 
-.jp_menu li:hover .sub-menu li{
-    height:30px;
-}
+/* 小屏幕（平板，大于等于 768px） */
+@media (min-width:  1200px) {
+    /*导航菜单*/
+    .jp_nav{
+        float: left;
+        height: 50px;
+        width: 720px;
+    }
 
-.jp_menu li:hover .sub-menu li a{
-    display:block;
-    width:90px;
-    height:30px;
-    line-height:30px;
-    text-align:center;
-}
+    #navbar-search{
+        display: block;
+    }
 
-.jp_menu li:hover .sub-menu li .sub-menu {
-    display:none;
-}
+    .jp_nav a{
+        color: #AAAAAA;
+    }
 
-.jp_menu li:hover .sub-menu li:hover .sub-menu{
-    display:block;
-    width:90px;
-    position:absolute;
-    top:0px;
-    left:90px;
+    .jp_menu li{
+        display: block;
+        list-style-type: none;
+        width: 90px;
+        height: 50px;
+        float: left;
+        margin: 0;
+        position:relative;
+    }
+
+    .jp_menu li a{
+        font-size: 14px;
+        display: block;
+        width: 90px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+    }
+
+    .jp_menu li a:hover{
+        text-decoration: none;
+        background-color: #3879D9;
+        color: #FFFFFF;
+    }
+
+    .sub-menu{
+        display:none;
+    }
+
+    .jp_menu li:hover .sub-menu{
+        display: block;
+        width: 90px;
+        top:50px;
+        padding-left: 0px;
+        position: absolute;
+        background-color: #373F47;
+    }
+
+    .jp_menu li:hover .sub-menu li{
+        height:30px;
+    }
+
+    .jp_menu li:hover .sub-menu li a{
+        display:block;
+        width:90px;
+        height:30px;
+        line-height:30px;
+        text-align:center;
+    }
+
+    .jp_menu li:hover .sub-menu li .sub-menu {
+        display:none;
+    }
+
+    .jp_menu li:hover .sub-menu li:hover .sub-menu{
+        display:block;
+        width:90px;
+        position:absolute;
+        top:0px;
+        left:90px;
+    }
 }
 
 /*

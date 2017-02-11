@@ -24,7 +24,7 @@
 <body>
 
 <!-- 导航栏 start -->
-<nav class="navbar navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <!-- 适配移动端button下拉菜单  -->
@@ -38,7 +38,6 @@
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
-
             <?php
             //TODO菜单样式的控制
             $args = array(
@@ -62,7 +61,7 @@
             wp_nav_menu($args); ?>
 
             <!-- 导航右部分-搜索框 start -->
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-right">
                 <li id="navbar-search">
                     <form method="GET" class="navbar-form navbar-right" role="search"  action="<?php bloginfo( 'home' ); ?>/">
                         <div class="input-group">

@@ -45,7 +45,7 @@ function CID_get_flag($ip) {
 	$output = str_replace("%COUNTRY_CODE%", $code, $output);
 	$output = str_replace("%COUNTRY_NAME%", $name, $output);
 	$output = str_replace("%COMMENTER_IP%", $ip, $output);
-	$output = str_replace("%IMAGE_BASE%", get_stylesheet_directory_uri().'/show-useragent/flags', $output);
+	$output = str_replace("%IMAGE_BASE%", get_stylesheet_directory_uri().'/public/show-useragent/flags', $output);
 	
 	return $output;
 }
@@ -66,7 +66,7 @@ function CID_get_flag_without_template($ip, $show_image = true, $show_text = tru
 	$output = '';
 	
 	if ($show_image)
-		$output = '<img src="'.get_stylesheet_directory_uri().'/show-useragent/flags/' . $code . '.png" title="' . $name . '" alt="' . $name . '" class="country-flag" />';
+		$output = '<img src="'.get_stylesheet_directory_uri().'/public/show-useragent/flags/' . $code . '.png" title="' . $name . '" alt="' . $name . '" class="country-flag" />';
 	if ($show_text)
 		$output .= ' ' . $name;
 	
@@ -88,7 +88,7 @@ function CID_print_comment_flag() {
 }
 	
 /* 浏览器 */
-$CID_image_url = get_stylesheet_directory_uri()."/show-useragent/browsers/";
+$CID_image_url = get_stylesheet_directory_uri()."/public/show-useragent/browsers/";
 $CID_width_height = "14px";
 
 function CID_windows_detect_os($ua) {
@@ -887,7 +887,7 @@ function CID_friendly_string($browser_name = '', $browser_code = '', $browser_ve
 	$pda_code    		= htmlspecialchars($pda_code);
 	$pda_ver     		= htmlspecialchars($pda_ver);
 	
-	$output = str_replace("%IMAGE_BASE%", get_stylesheet_directory_uri()."/show-useragent/browsers", $output);
+	$output = str_replace("%IMAGE_BASE%", get_stylesheet_directory_uri()."/public/show-useragent/browsers", $output);
 	
 	if ($browser_name && $pda_name) {
 		$output = str_replace("[BROWSER]", "", $output);

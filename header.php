@@ -24,7 +24,7 @@
 <body>
 
 <!-- 导航栏 start -->
-<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+<nav class="navbar navbar-fixed-top navbar-inverse <?php if ( is_user_logged_in() ) { echo 'admin_login_nav'; } ?>" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <!-- 适配移动端button下拉菜单  -->

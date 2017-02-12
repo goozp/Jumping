@@ -48,7 +48,7 @@
 		TODO 楼中楼回复时的体验优化
 		-->
 	<?php if ( comments_open() ) : ?>
-	<div  class="col-xs-12 col-sm-12 comments-data respond" id="respond">
+	<div  class="col-xs-12 col-sm-12 comments-data comments-respond" id="respond">
 		<div class="row">
 			<div class="col-xs-12 col-sm-12">
 				<h3 class="comments-title"><i class="fa fa-commenting"></i>&nbsp;<?php _e( 'Leave a reply' , JUMPING_NAME); ?> <small>为了网站的健康成长，请友爱发言~</small></h3>

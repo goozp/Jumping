@@ -81,16 +81,18 @@ blockquote {
     box-shadow:1px 1px 2px #C8C8C8;
     filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
 }
+.admin_login_nav{
+    margin-top: 46px;
+}
+
 /* logo */
-.navbar-brand{
-    font-family: "Microsoft YaHei UI";
+.navbar-inverse .navbar-brand{
+    font-family: 'Microsoft YaHei UI', '微软雅黑', Arial, sans-serif;
     font-size: 26px;
     margin-right: 20px;
-    color: #EAEAEA;
+    color: #FFFFFF;
 }
-.navbar-brand:hover{
-    color: #1378F0;
-}
+
 /*导航菜单*/
 .jp_nav a{
     color: #AAAAAA;
@@ -116,6 +118,12 @@ blockquote {
 }
 
 @media (min-width: 768px) {
+    .admin_login_nav{
+        margin-top: 32px;
+    }
+    .navbar-inverse .navbar-brand:hover{
+        color: #3879D9;
+    }
     /*导航菜单*/
     .jp_nav{
         float: left;
@@ -140,6 +148,12 @@ blockquote {
 
 /* 小屏幕（平板，大于等于 768px） */
 @media (min-width:  1200px) {
+    .admin_login_nav{
+        margin-top: 32px;
+    }
+    .navbar-inverse .navbar-brand:hover{
+        color: #3879D9;
+    }
     /*导航菜单*/
     .jp_nav{
         float: left;
@@ -598,6 +612,10 @@ body.full-content .post-body h4,
 }
 .comment-date-reply a:hover{
     color: #3879D9;
+}
+
+.comments-respond{
+    margin-bottom: 20px;
 }
 
 /*

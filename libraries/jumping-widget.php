@@ -173,7 +173,7 @@ class Jumping_widget_label extends WP_Widget
         $smallest = $smallest ? $smallest : 8;
         $largest = $largest ? $largest : 22;
         ?>
-        <div class="widget widget-label">
+        <div class="widget widget-label hidden-xs">
             <h4><i class="fa fa-tags"></i>&nbsp;<?php _e( 'Yun tags', JUMPING_NAME ); ?></h4>
             <p><?php wp_tag_cloud("smallest={$smallest}&largest={$largest}"); ?></p>
         </div>
@@ -246,7 +246,7 @@ class Jumping_widget_comment extends WP_Widget{
         $limit = strip_tags($instance['limit']);
         $limit = $limit ? $limit : 5;
         ?>
-        <div class="widget widget-comments">
+        <div class="widget widget-comments hidden-xs">
             <h4><i class="fa fa-comments"></i>&nbsp;<?php _e( 'Latest comments', JUMPING_NAME ); ?></h4>
             <ul>
                 <?php $this->jumping_get_comments($limit);?>
@@ -305,7 +305,7 @@ class Jumping_widget_archive extends WP_widget{
         $showType = $showType ? $showType : 'monthly';
         $limit = $limit ? $limit : '';
         ?>
-        <div class="widget widget-archive clearfix">
+        <div class="widget widget-archive clearfix hidden-xs">
             <h4><i class="fa fa-archive"></i>&nbsp;<?php _e( 'Archive list', JUMPING_NAME ); ?></h4>
             <ul>
                 <?php if ($limit){

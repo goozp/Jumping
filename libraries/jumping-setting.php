@@ -42,6 +42,34 @@ class jumping_setting {
                 'label' => '默认没有特色图片时缩略图会显示文章中插入的图片，勾选后，首页和归档页面只显示特色图片的缩略图，文章中插入的图片缩略图将不会显示。'
             ),
             array(
+                'title' => '侧栏——个人名称展示',
+                'key'   => 'author-name',
+                'type'  => 'input',
+                'value' => false,
+                'label' => '侧栏显示的个人名称展示，一般为博主。'
+            ),
+            array(
+                'title' => '侧栏——微博链接',
+                'key'   => 'weibo-link',
+                'type'  => 'input',
+                'value' => false,
+                'label' => '侧栏微博小图标链接到的地址，可不设。'
+            ),
+            array(
+                'title' => '侧栏——Facebook链接',
+                'key'   => 'facebook-link',
+                'type'  => 'input',
+                'value' => false,
+                'label' => '侧栏Facebook小图标链接到的地址，可不设。'
+            ),
+            array(
+                'title' => '侧栏——Github链接',
+                'key'   => 'github-link',
+                'type'  => 'input',
+                'value' => false,
+                'label' => '侧栏Github小图标链接到的地址，可不设。'
+            ),
+            array(
                 'title' => '底部footer布局',
                 'key'   => 'footerType',
                 'type'  => 'radio',
@@ -139,7 +167,7 @@ class jumping_setting {
             <div class="theme-about">
                 <h3>主题特色</h3>
                 <ol>
-                    <li>采用bootstrap构建</li>
+                    <li>采用bootstrap构建；比较简洁，风格性冷谈。</li>
                     <li>支持自适应，适配移动端设备</li>
                     <li>目前提供五个已有样式的侧边栏小工具：热门文章，最新文章，标签云，最新评论，归档</li>
                     <li>模板页面提供一个archives归档页</li>
@@ -161,7 +189,8 @@ class jumping_setting {
             <div class="using-about">
                 <h3>部分功能使用说明</h3>
                 <ol>
-                    <li>使用主题后请先在主题设置页面设置网站信息，非常重要，description和keywords一经设置最好少修改。</li>
+                    <li>开始使用主题后请先在主题设置页面设置网站信息，非常重要，description和keywords一经设置最好少修改；并选择一款footer样式。</li>
+                    <li>右侧边栏的头像请直接替换public/images/jumbotron_self.png图片，并保持原来名字。（未来开放设置中心修改）</li>
                     <li>archives归档页使用：直接新建一个独立页面，模板选择Archive归档页面即可。</li>
                 </ol>
             </div>
@@ -169,7 +198,7 @@ class jumping_setting {
                 <h3>待完善</h3>
                 <ol>
                     <li>底部左侧空旷</li>
-                    <li>侧边栏个人板块整合进主题设置</li>
+                    <li>侧边栏个人头像整合进主题设置，以及发放想展示的社交平台（不局限于现在的这三种）。</li>
                     <li>顶部导航一级栏目过多时样式会出现混乱</li>
                     <li>Gravatar头像的优化</li>
                     <li>楼中楼评论时的用户体验</li>

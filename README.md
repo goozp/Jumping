@@ -16,9 +16,10 @@ WordPress theme build using bootstrap.
 *依赖插件：WP-PostViews（文章浏览量统计插件）
 *小图标：采用Font Awesome v4.7.0，具体图标对应class请前往官网查看。
 
-##部分功能使用说明
-1. 使用主题后请先在主题设置页面设置网站信息，非常重要，description和keywords一经设置最好少修改。
-2. archives归档页使用：直接新建一个独立页面，模板选择Archive归档页面即可。
+## 部分功能使用说明
+1. 开始使用主题后请先在主题设置页面设置网站信息，非常重要，description和keywords一经设置最好少修改；并选择一款footer样式。
+2. 右侧边栏的头像请直接替换public/images/jumbotron_self.png图片，并保持原来名字。（未来开放设置中心修改）
+3. archives归档页使用：直接新建一个独立页面，模板选择Archive归档页面即可。
 
 ##待完善
 *底部左侧空旷

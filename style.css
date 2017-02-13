@@ -368,27 +368,66 @@ blockquote {
 
 .widget-comments ul{
     list-style-type: none;
-    padding: 0 5px 5px 10px;
 }
 
 .widget-comments ul li{
-    height: 55px;
+    display: block;
+    float: left;
+    min-height: 50px;
+    width: 95%;
+    margin: 0 5px 5px 10px;
 }
 
 .widget-comments .gavatar{
     float: left;
-    height: 55px;
-    margin-right: 5px;
+    width: 20%;
+}
+.widget-comments .gavatar img{
+    height: auto;
+}
+
+.widget-comments .comments-con{
+    float: left;
+    width: 80%;
 }
 
 .comments-con p{
-    margin: auto;
-    font-size: 12px;
+    float: left;
+    display: block;
+    width: 100%;
+    margin-bottom: 2px;
+    margin-left: 5px;
+    word-break: normal;
+    word-wrap: break-word;
 }
 
 .comments-name {
+    display: block;
+    float: left;
     font-weight: bold;
+    width: 20%;
 }
+
+.comments-time{
+    font-size: 10px;
+    color: #AAAAAA;
+    font-weight: normal;
+    display: block;
+}
+
+@media (min-width:  1200px) {
+    .comments-time{
+        display: inline-block;
+        float: right;
+        margin-top: 2px;
+        margin-right: 5px;
+    }
+    .comments-name {
+        display: inline-block;
+        float: left;
+    }
+}
+
 
 .widget_self{
     margin-bottom: 15px;
@@ -420,13 +459,24 @@ blockquote {
 }
 
 .widget-archive ul li{
+    width: 95%;
     margin: 0 5px 5px 5px;
     float: left;
+    font-size: 14px;
+}
+
+@media (min-width:  1200px) {
+    .widget-archive ul li{
+        width: 45%;
+        margin: 0 5px 5px 5px;
+        float: left;
+        font-size: 14px;
+    }
 }
 
 .widget-archive ul li a{
     color: #3879D9;
-    font-size: 14px;
+    font-size: 0.5em;
 }
 
 .widget-archive ul li a:hover{

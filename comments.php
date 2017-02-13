@@ -113,8 +113,17 @@
 				          onkeydown="if(event.ctrlKey&&event.keyCode==13){document.getElementById('submit').click();return false};"></textarea>
 			</div>
 
-			<div class="col-xs-12 col-sm-12 jp_comments_col comments_submit">
-				<input class="btn btn-primary" id="submit" type="submit" name="submit" value="<?php _e( 'Submit / Ctrl+Enter', JUMPING_NAME ); ?>" />
+			<div class="col-xs-12 col-sm-12 ">
+				<div class="col-xs-6 col-sm-6 checkbox">
+					<label>
+						<input type="checkbox"  name="comment_mail_notify"  id="comment_mail_notify" value="comment_mail_notify" checked="checked">
+						<strong>有回复时邮件通知我</strong> <i class="fa fa-envelope-o"></i>
+					</label>
+				</div>
+
+				<div class="col-xs-6 col-sm-6 jp_comments_col comments_submit">
+					<input class="btn btn-primary" id="submit" type="submit" name="submit" value="<?php _e( 'Submit / Ctrl+Enter', JUMPING_NAME ); ?>" />
+				</div>
 			</div>
 
 			<?php comment_id_fields(); ?>

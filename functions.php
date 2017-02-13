@@ -19,8 +19,9 @@ define( "JUMPING_THEME_URL", get_bloginfo( 'template_directory' ) );
 /**
  * 导入主题核心文件
  */
-get_template_part( 'libraries/jumping-basic' );
-get_template_part( 'libraries/jumping-widget' );
+get_template_part( 'functions/jumping-basic' );
+get_template_part( 'functions/jumping-functions' );
+get_template_part( 'functions/jumping-widget' );
 
 /**
  * 导入语言包
@@ -72,7 +73,7 @@ if( function_exists('register_sidebar') ) {
 if ( is_admin() ) {
     //TODO 检测版本更新
 
-    get_template_part( 'libraries/jumping-setting' ); //主题配置文件
+    get_template_part( 'functions/jumping-setting' ); //主题配置文件
     //实例化配置
     new Jumping_setting();
 }
@@ -119,7 +120,6 @@ function jumping_scripts_with_jquery()
 
 }
 add_action( 'wp_enqueue_scripts', 'jumping_scripts_with_jquery' );
-
 
 
 // 移除WordPress Emoji表情

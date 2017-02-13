@@ -228,10 +228,12 @@ class Jumping_widget_comment extends WP_Widget{
         $comments = get_comments( "user_id=0&status=approve&number={$num}" );
         $output = "";
         foreach ($comments as $comment) {
-            $output .= "<li>
-                        <div class='gavatar'>".get_avatar( $comment, 43,'',$comment->comment_author, array('class' => 'img-circle'))."</div>
+            $output .= "<li> 
+                        <div class='gavatar'>".get_avatar( $comment, 43,'',$comment->comment_author, array('class' => 'img-responsive img-circle'))."</div>
                         <div class='comments-con'>
-                            <p><a class='comments-name' href='".get_permalink($comment->ID)."#comment-" . $comment->comment_ID . "'>".strip_tags($comment->comment_author)."</a>：</p>
+                            <p class='comments-name'><a  href='".get_permalink($comment->ID)."#comment-" . $comment->comment_ID . "'>".strip_tags($comment->comment_author)."</a>：
+                                 <span class='comments-time'>".date('Y-m-d', strtotime($comment->comment_date_gmt))."</span>
+                            </p>
                             <p><a class='comments-comment' href='".get_permalink($comment->comment_post_ID )."#comment-".$comment->comment_ID."'>" .jummping_deal_comments(strip_tags($comment->comment_content)) ."</a></p>
                         </div>
                     </li>";
@@ -246,7 +248,7 @@ class Jumping_widget_comment extends WP_Widget{
         $limit = strip_tags($instance['limit']);
         $limit = $limit ? $limit : 5;
         ?>
-        <div class="widget widget-comments hidden-xs">
+        <div class="widget widget-comments hidden-xs clearfix">
             <h4><i class="fa fa-comments"></i>&nbsp;<?php _e( 'Latest comments', JUMPING_NAME ); ?></h4>
             <ul>
                 <?php $this->jumping_get_comments($limit);?>
@@ -312,7 +314,7 @@ class Jumping_widget_archive extends WP_widget{
                     $args = array(
                         'type'          => $showType,
                         'limit'         => $limit,
-                        'before'        => '<button class="btn btn-default" type="button">',
+                        'before'        => '<button class="btn btn-default btn-block" type="button">',
                         'after'         => '<span class="badge">4</span></button>',
                         'show_post_count' => $showNum,
                     );
@@ -320,7 +322,7 @@ class Jumping_widget_archive extends WP_widget{
                 }else{
                     $args = array(
                         'type'          => $showType,
-                        'before'        => '<button class="btn btn-default btn-sm" type="button">',
+                        'before'        => '<button class="btn btn-default btn-block" type="button">',
                         'after'         => '</button>',
                         'show_post_count' => $showNum,
                     );

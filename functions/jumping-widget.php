@@ -231,7 +231,7 @@ class Jumping_widget_comment extends WP_Widget{
             $output .= "<li> 
                         <div class='gavatar'>".get_avatar( $comment, 43,'',$comment->comment_author, array('class' => 'img-responsive img-circle'))."</div>
                         <div class='comments-con'>
-                            <p class='comments-name'><a  href='".get_permalink($comment->ID)."#comment-" . $comment->comment_ID . "'>".strip_tags($comment->comment_author)."</a>：
+                            <p class='comments-name'><a  href='".get_permalink($comment->comment_post_ID)."#comment-" . $comment->comment_ID . "'>".strip_tags($comment->comment_author)."</a>：
                                  <span class='comments-time'>".date('Y-m-d', strtotime($comment->comment_date_gmt))."</span>
                             </p>
                             <p><a class='comments-comment' href='".get_permalink($comment->comment_post_ID )."#comment-".$comment->comment_ID."'>" .jummping_deal_comments(strip_tags($comment->comment_content)) ."</a></p>

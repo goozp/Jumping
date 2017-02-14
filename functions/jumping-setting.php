@@ -70,6 +70,27 @@ class jumping_setting {
                 'label' => '侧栏Github小图标链接到的地址，可不设。'
             ),
             array(
+                'title' => '评论回复邮件提醒——邮箱smtp地址',
+                'key'   => 'email-smtp',
+                'type'  => 'input',
+                'value' => false,
+                'label' => '邮箱smtp地址，如阿里云企业邮：smtp.mxhichina.com。'
+            ),
+            array(
+                'title' => '评论回复邮件提醒——邮箱账号',
+                'key'   => 'email-name',
+                'type'  => 'input',
+                'value' => false,
+                'label' => '您的邮箱帐号。'
+            ),
+            array(
+                'title' => '评论回复邮件提醒——邮箱密码',
+                'key'   => 'email-password',
+                'type'  => 'password',
+                'value' => false,
+                'label' => '您的邮箱密码。'
+            ),
+            array(
                 'title' => '底部footer布局',
                 'key'   => 'footerType',
                 'type'  => 'radio',
@@ -285,6 +306,10 @@ class jumping_setting {
                 $this->input( $obj['key'] );
                 break;
 
+            case 'password':
+                $this->password( $obj['key'] );
+                break;
+
             case 'textarea':
                 $this->textarea( $obj['key'] );
                 break;
@@ -301,6 +326,10 @@ class jumping_setting {
 
     private function input( $key ) {
         printf( '<input type="input" class="regular-text" name="%s_settings[%s]" value="%s" />', JUMPING_NAME, $key, jumping_setting( $key ) );
+    }
+
+    private function password( $key ) {
+        printf( '<input type="password" class="regular-text" name="%s_settings[%s]" value="%s" />', JUMPING_NAME, $key, jumping_setting( $key ) );
     }
 
     private function number( $key ) {

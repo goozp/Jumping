@@ -20,9 +20,14 @@ function jp_header(){
         <title><?php echo trim( wp_title( '', 0 ) ); ?> - <?php bloginfo( 'name' ); ?></title>
     <?php }elseif( is_author() ){  ?>
         <title><?php wp_title( "" ); ?> - <?php bloginfo( 'name' ); ?></title>
-    <?php }elseif( is_archive() ){ ?>
+    <?php }elseif( is_archive() ){
+        if ( is_year() || is_month() || is_day() ) {
+            ?>
+            <title><?php echo get_the_archive_title(); ?> - <?php bloginfo( 'name' ); ?></title>
+            <?php
+        } else{?>
         <title><?php single_cat_title(); ?> - <?php bloginfo( 'name' ); ?></title>
-    <?php }elseif( is_year() ){ ?>
+    <?php }}elseif( is_year() ){ ?>
         <title><?php the_time( 'Y' ); ?> - <?php bloginfo( 'name' ); ?></title>
     <?php }elseif( is_month() ){ ?>
         <title><?php the_time( 'F' ); ?> - <?php bloginfo( 'name' ); ?></title>

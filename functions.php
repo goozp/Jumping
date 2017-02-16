@@ -114,8 +114,13 @@ function jumping_scripts_with_jquery()
     //archives.js archives.css
     if( is_page_template( 'templates/archives.php' ) ){
         wp_enqueue_script( 'jumping-archives', jumping_script( 'archives.js' ), null, JUMPING_VERSION, false );
-        wp_register_style( 'archives', get_template_directory_uri() . '/public/css/archives.css' );
+        wp_register_style( 'archives', get_template_directory_uri() . '/public/css/archives.css', null, JUMPING_VERSION  );
         wp_enqueue_style( 'archives' );
+    }
+    if( is_page_template( 'templates/treeTime.php' ) ){
+        wp_enqueue_script( 'jumping-tree', jumping_script( 'tree.js' ), null, JUMPING_VERSION, false );
+        wp_register_style( 'tree', get_template_directory_uri() . '/public/css/tree.css', null, JUMPING_VERSION );
+        wp_enqueue_style( 'tree' );
     }
 
 }

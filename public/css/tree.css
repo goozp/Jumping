@@ -1,0 +1,96 @@
+.tree-body{
+    background-color: #FFFFFF;
+    border: 1px solid #f0f0ee;
+    border-radius : 10px;
+    -moz-box-shadow:3px 3px 4px #C8C8C8;
+    -webkit-box-shadow:3px 3px 4px #C8C8C8;
+    box-shadow:1px 1px 2px #C8C8C8;
+    filter:progid:DXImageTransform.Microsoft.Shadow(Strength=4,Direction=135,Color='#000000');
+}
+
+.tree-body h3{
+    font-family: 'Microsoft Yahei', '微软雅黑';
+    text-align: center;
+    font-weight: bold;
+}
+
+ul.timeline {
+    list-style-type: none;
+    background: url("../images/version_line.png") repeat-y scroll 120px 0 transparent;
+    margin: 50px 0;
+    padding: 0;
+}
+ul.timeline li.tree-top {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+ul.timeline li.tree-bottom {
+    position: relative;
+    margin-top: 20px;
+}
+
+ul.timeline li.tree-top .version {
+    position: absolute;
+    width: 290px;
+    text-align: right;
+    left: -200px;
+    top: 5px;
+    font-size: 18px;
+    line-height: 50px;
+    color: #7A8189;
+    overflow: hidden;
+}
+ul.timeline li .number {
+    position: absolute;
+    background: url("../images/version_dot.png") no-repeat scroll 0 0 transparent;
+    width: 56px;
+    height: 56px;
+    left: 97px;
+    line-height: 56px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+ul.timeline li.alt .number {
+    background-image: url("../images/version_dot_alt.png");
+}
+
+ul.timeline li.tree-bottom .number{
+    position: absolute;
+    background: url("../images/version_dot.png") no-repeat scroll 0 0 transparent;
+    top: 30px;
+    width: 56px;
+    height: 56px;
+    left: 97px;
+    line-height: 56px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+}
+ul.timeline li.tree-bottom .version{
+    position: absolute;
+    width: 290px;
+    text-align: right;
+    left: -200px;
+    top: 35px;
+    font-size: 18px;
+    line-height: 50px;
+    color: #7A8189;
+    overflow: hidden;
+}
+
+ul.timeline li .content {
+    margin-left: 180px;
+}
+ul.timeline li .content p {
+    background-color: #3594cb;
+    border-radius : 5px;
+    padding: 20px;
+    color: #fff;
+    font-size: 15px;
+    line-height: 20px;
+}
+ul.timeline li.alt .content p {
+    background-color: #43B1F1;
+}

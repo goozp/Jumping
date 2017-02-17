@@ -56,7 +56,8 @@
 								</li>
 								<li class="inline-li">
 									<i class="fa fa-comments-o"></i>
-									<?php comments_popup_link( '0 reply', '1 reply', '% replies' ); ?>
+									<?php comments_popup_link( __( '0 reply', JUMPING_NAME ), __( '1 reply', JUMPING_NAME ), __( '% replies', JUMPING_NAME ) ); ?>
+
 								</li>
 							</ul>
 						</div>

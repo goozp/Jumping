@@ -191,7 +191,7 @@ class jumping_setting {
                     <li>采用bootstrap构建；比较简洁，风格性冷谈。</li>
                     <li>支持自适应，适配移动端设备</li>
                     <li>目前提供五个已有样式的侧边栏小工具：热门文章，最新文章，标签云，最新评论，归档</li>
-                    <li>模板页面提供一个archives归档页</li>
+                    <li>模板页面提供archives归档页，treeTime时间轴页面</li>
                     <li>底部footer提供普通和微信二维码两种方案</li>
                     <li>去除了加载Google Fonts，emoji表情等以优化速度</li>
                     <li>优化了Wordpress默认输出的 head 加载</li>
@@ -205,6 +205,9 @@ class jumping_setting {
                     <li>
                         小图标：采用<a href="http://fontawesome.dashgame.com/" target="_blank">Font Awesome v4.7.0</a>，具体图标对应class请前往官网查看。
                     </li>
+                    <li>
+                        发送邮件：评论回复邮件提醒功能采用了PHPMailer，发送邮件的设置可在主题设置中进行设置。
+                    </li>
                 </ul>
             </div>
             <div class="using-about">
@@ -213,6 +216,7 @@ class jumping_setting {
                     <li>开始使用主题后请先在主题设置页面设置网站信息，非常重要，description和keywords一经设置最好少修改；并选择一款footer样式。</li>
                     <li>右侧边栏的头像请直接替换public/images/jumbotron_self.png图片，并保持原来名字。（未来开放设置中心修改）</li>
                     <li>archives归档页使用：直接新建一个独立页面，模板选择Archive归档页面即可。</li>
+                    <li>treeTime归档页使用：新建一个选择Archive的归档页面，开放评论，但是内容需要在treeTime.php中自行修改。</li>
                 </ol>
             </div>
             <div class="to-do">

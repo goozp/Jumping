@@ -47,7 +47,7 @@ get_header(); ?>
                         </div>
                     </li>
                     <li class="tree-top">
-                        <div class="version">2016.01.19</div>
+                        <div class="version">2016.02.06</div>
                         <div class="number">3</div>
                         <div class="content">
                             <p>

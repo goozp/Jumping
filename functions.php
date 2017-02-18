@@ -160,4 +160,32 @@ function clear_db_cache_archives_list() {
 }
 add_action('save_post', 'clear_db_cache_archives_list');
 
+
+//文章外链跳转
+add_filter('the_content','link_jump',999);
+function link_jump($content){
+    preg_match_all('/<a(.*?)href="(.*?)"(.*?)>/',$content,$matches);
+    if($matches){
+        foreach($matches[2] as $val){
+            if(strpos($val,'://')!==false && strpos($val,home_url())===false && !preg_match('/\.(jpg|jepg|png|ico|bmp|gif|tiff)/i',$val) && !preg_match('/(ed2k|thunder|Flashget|flashget|qqdl):\/\//i',$val)){
+                $content=str_replace("href=\"$val\"", "href=\"".home_url()."/go/?url=".base64_encode($val)."\" rel=\"nofollow\"",$content);
+            }
+        }
+    }
+    return $content;
+}
+//评论者链接跳转
+function Bing_comment_author_link(){
+    $url = get_comment_author_url();
+    $author = get_comment_author();
+    if( empty( $url ) || $url == 'http://' ) return $author;
+    return "<a href='".home_url()."/go/?url=$url' rel='external nofollow' target='_blank' class='url'>$author</a>";
+}
+add_filter( 'get_comment_author_link', 'Bing_comment_author_link', 2 );
+//评论内容链接跳转
+function add_redirect_comment_link($text = ''){
+    $text=str_replace('<a href="', '<a target="_blank" href="'.get_option('home').'/go/?url=', $text);
+    return $text;
+}
+add_filter('comment_text', 'add_redirect_comment_link', 99);
 ?>

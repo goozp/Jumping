@@ -182,10 +182,4 @@ function Bing_comment_author_link(){
     return "<a href='".home_url()."/go/?url=$url' rel='external nofollow' target='_blank' class='url'>$author</a>";
 }
 add_filter( 'get_comment_author_link', 'Bing_comment_author_link', 2 );
-//评论内容链接跳转
-function add_redirect_comment_link($text = ''){
-    $text=str_replace('<a href="', '<a target="_blank" href="'.get_option('home').'/go/?url=', $text);
-    return $text;
-}
-add_filter('comment_text', 'add_redirect_comment_link', 99);
 ?>

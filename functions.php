@@ -122,6 +122,10 @@ function jumping_scripts_with_jquery()
         wp_register_style( 'tree', get_template_directory_uri() . '/public/css/tree.css', null, JUMPING_VERSION );
         wp_enqueue_style( 'tree' );
     }
+    if( is_page_template( 'templates/myJob.php' ) ){
+        wp_register_style( 'job', get_template_directory_uri() . '/public/css/job.css', null, JUMPING_VERSION );
+        wp_enqueue_style( 'job' );
+    }
 
 }
 add_action( 'wp_enqueue_scripts', 'jumping_scripts_with_jquery' );

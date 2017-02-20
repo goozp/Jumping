@@ -672,12 +672,12 @@ body.full-content .post-body h4,
  * footer
  */
 footer {
-    padding: 15px 0;
+    padding-top: 15px;
 }
 
 .footer{
     color: #AAAAAA;
-    background-color: #373F47;
+    background-color: #373D41;
     border-top: solid 1px #000000;
 }
 
@@ -690,8 +690,8 @@ footer {
     text-decoration: none;
 }
 
-.footer p{
-    text-align: center;
+.footer-info-block{
+    padding: 5px;
 }
 
 .footer_links{
@@ -705,5 +705,15 @@ footer {
 }
 
 .footer_links_label p{
+    color: #ffffff;
     text-align: left;
+}
+
+.footer-bottom{
+    background-color: #191919;
+    padding: 5px;
+}
+
+.footer-bottom-container{
+    padding: 0;
 }

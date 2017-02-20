@@ -30,3 +30,6 @@ WordPress theme build using bootstrap.
 * 顶部导航一级栏目过多时样式会出现混乱
 * Gravatar头像的优化
 * 楼中楼评论时的用户体验
+
+## V 1.1.0
+* 优化Gravatar头像镜像

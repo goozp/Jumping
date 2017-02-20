@@ -164,4 +164,11 @@ function clear_db_cache_archives_list() {
 }
 add_action('save_post', 'clear_db_cache_archives_list');
 
+/* 修改Gravatar服务器为cn.gravatar.com */
+function mytheme_get_avatar( $avatar ) {
+    $avatar = preg_replace( "/http:\/\/(www|\d).gravatar.com/","http://cn.gravatar.com",$avatar );
+    return $avatar;
+}
+add_filter( 'get_avatar', 'mytheme_get_avatar' );
+
 ?>

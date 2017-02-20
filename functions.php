@@ -186,4 +186,11 @@ function Bing_comment_author_link(){
     return "<a href='".home_url()."/go/?url=$url' rel='external nofollow' target='_blank' class='url'>$author</a>";
 }
 add_filter( 'get_comment_author_link', 'Bing_comment_author_link', 2 );
+
+/* 修改Gravatar服务器为cn.gravatar.com */
+function mytheme_get_avatar( $avatar ) {
+    $avatar = preg_replace( "/http:\/\/(www|\d).gravatar.com/","http://cn.gravatar.com",$avatar );
+    return $avatar;
+}
+add_filter( 'get_avatar', 'mytheme_get_avatar' );
 ?>

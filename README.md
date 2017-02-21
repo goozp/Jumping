@@ -33,3 +33,4 @@ WordPress theme build using bootstrap.
 
 ## V 1.1.0
 * 优化Gravatar头像镜像
+* 修复设置时间后时间仍然不正确的bug

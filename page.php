@@ -14,7 +14,7 @@
                             <ul class="post_meta_ul">
                                 <li class="inline-li">
                                     <i class="fa fa-calendar-check-o"></i>
-                                    <?php echo date('Y-m-d H:i',strtotime($post->post_date_gmt)); ?>
+                                    <?php echo date('Y-m-d H:i',strtotime($post->post_date)); ?>
                                 </li>
                                 <li class="inline-li">
                                     <span class="post-span"> | </span>

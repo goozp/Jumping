@@ -181,7 +181,7 @@ function jumping_comment( $comment, $args, $depth ) {
                 <div class="comment-date-reply">
                     <span class="comment-span comment-date">
                         <i class="fa fa-clock-o"></i>
-                        <?php echo date('Y-m-d H:i',strtotime($comment->comment_date_gmt)); ?>
+                        <?php echo date('Y-m-d H:i',strtotime($comment->comment_date)); ?>
                     </span>
                     &nbsp;&nbsp;&nbsp;
                     <i class="fa fa-reply"></i>
@@ -229,7 +229,7 @@ function jumping_comment( $comment, $args, $depth ) {
                 <div class="comment-date-reply">
                 <span class="comment-span comment-date">
                     <i class="fa fa-clock-o"></i>
-                    <?php echo date('Y-m-d H:i',strtotime($comment->comment_date_gmt)); ?>
+                    <?php echo date('Y-m-d H:i',strtotime($comment->comment_date)); ?>
                 </span>
                     &nbsp;&nbsp;&nbsp;
                     <i class="fa fa-reply"></i>

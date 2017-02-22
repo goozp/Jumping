@@ -96,9 +96,9 @@ get_header(); ?>
                 $github_name    = empty($githubName) ? '#' : $githubName;
                 ?>
                 <h4><?php echo $author_name ?></h4>
-                <a href="<?php echo $weibo_name ?>" class="i_weibo" target="_blank"><i class="fa fa-weibo  fa-lg"></i></a>
-                <a href="<?php echo $github_name ?>" class="i_github" target="_blank"><i class="fa fa-github fa-lg"></i></a>
-                <a href="<?php echo $facebook_name ?>" class="i_facebook" target="_blank"><i class="fa fa-facebook-square fa-lg"></i></a>
+                <a href="<?php echo $weibo_name ?>" class="i_weibo" target="_blank" rel="external nofollow"><i class="fa fa-weibo  fa-lg"></i></a>
+                <a href="<?php echo $github_name ?>" class="i_github" target="_blank" rel="external nofollow"><i class="fa fa-github fa-lg"></i></a>
+                <a href="<?php echo $facebook_name ?>" class="i_facebook" target="_blank" rel="external nofollow"><i class="fa fa-facebook-square fa-lg"></i></a>
             </div>
         </div>
         <?php get_sidebar(); ?>

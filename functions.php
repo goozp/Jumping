@@ -164,7 +164,6 @@ function clear_db_cache_archives_list() {
 }
 add_action('save_post', 'clear_db_cache_archives_list');
 
-
 //文章外链跳转
 add_filter('the_content','link_jump',999);
 function link_jump($content){
@@ -187,10 +186,12 @@ function Bing_comment_author_link(){
 }
 add_filter( 'get_comment_author_link', 'Bing_comment_author_link', 2 );
 
+
 /* 修改Gravatar服务器为cn.gravatar.com */
 function mytheme_get_avatar( $avatar ) {
     $avatar = preg_replace( "/http:\/\/(www|\d).gravatar.com/","http://cn.gravatar.com",$avatar );
     return $avatar;
 }
 add_filter( 'get_avatar', 'mytheme_get_avatar' );
+
 ?>

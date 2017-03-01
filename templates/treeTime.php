@@ -11,6 +11,15 @@ get_header(); ?>
                 <h3>博客历程</h3>
                 <ul class="timeline">
                     <li class="tree-top">
+                        <div class="version">2017.02.28</div>
+                        <div class="number">8</div>
+                        <div class="content">
+                            <p>
+                                服务器从阿里云共享虚拟主机迁移到云服务器ECS
+                            </p>
+                        </div>
+                    </li>
+                    <li class="tree-top">
                         <div class="version">2017.02.12</div>
                         <div class="number">7</div>
                         <div class="content">
@@ -42,7 +51,7 @@ get_header(); ?>
                         <div class="number">4</div>
                         <div class="content">
                             <p>
-                                迁移到阿里云主机
+                                迁移到阿里云主机（虚拟主机）
                             </p>
                         </div>
                     </li>

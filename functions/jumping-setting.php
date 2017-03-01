@@ -77,6 +77,16 @@ class jumping_setting {
                 'label' => '邮箱smtp地址，如阿里云企业邮：smtp.mxhichina.com。'
             ),
             array(
+                'title' => '评论回复邮件提醒——选择端口',
+                'key'   => 'email-port',
+                'type'  => 'radio',
+                'value' => array(
+                    '25' => '25',
+                    '465' => '465',
+                ),
+                'label' => '与smtp地址通讯的端口'
+            ),
+            array(
                 'title' => '评论回复邮件提醒——邮箱账号',
                 'key'   => 'email-name',
                 'type'  => 'input',

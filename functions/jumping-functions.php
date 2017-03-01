@@ -283,7 +283,12 @@ function comment_mail_notify($comment_id) {
             $mail->IsSMTP();
             $mail->CharSet='UTF-8';
             $mail->SMTPAuth = true;
-            $mail->Port = 25;
+            if (jumping_setting('email-port') == '25'){
+                $mail->Port = 25;
+            }elseif (jumping_setting('email-port') == '465'){
+                $mail->SMTPSecure = 'ssl';
+                $mail->Port = 465;
+            }
             $mail->Host = jumping_setting('email-smtp');//邮箱smtp地址
             $mail->Username = jumping_setting('email-name');//你的邮箱账号
             $mail->Password = jumping_setting('email-password');//你的邮箱密码

@@ -164,6 +164,15 @@ function clear_db_cache_archives_list() {
 }
 add_action('save_post', 'clear_db_cache_archives_list');
 
+
+/* 文章图片加https */
+function replaceHttp($content){
+    if( is_ssl() ){
+        $content = str_replace('http://files.gzpblog.com/wp/', 'https://files.gzpblog.com/wp/', $content);
+    }
+    return $content;
+}
+add_filter('the_content', 'replaceHttp');
 //文章外链跳转
 add_filter('the_content','link_jump',999);
 function link_jump($content){
@@ -177,6 +186,7 @@ function link_jump($content){
     }
     return $content;
 }
+
 //评论者链接跳转
 function Bing_comment_author_link(){
     $url = get_comment_author_url();

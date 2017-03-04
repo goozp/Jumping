@@ -51,6 +51,9 @@ register_nav_menus( array(
  */
 add_filter('pre_option_link_manager_enabled','__return_true');
 
+/* 文章支持设置特色图片 */
+add_theme_support( 'post-thumbnails', array('post') );
+
 /**
  * 只对管理员显示工具条
  */

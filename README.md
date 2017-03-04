@@ -35,3 +35,4 @@ WordPress theme build using bootstrap.
 * 优化Gravatar头像镜像
 * 修复设置时间后时间仍然不正确的bug
 * 新增发送邮件465端口选择
+* 编辑文章支持特色图片
